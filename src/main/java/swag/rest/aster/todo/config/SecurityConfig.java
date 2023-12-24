@@ -67,6 +67,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
             .authorizeRequests().antMatchers(HttpMethod.POST, "/authenticate").permitAll()
             .and()
+            .authorizeRequests().antMatchers(HttpMethod.DELETE, "/task").hasRole("ADMIN") // Only admins can DELETE /task
+                .anyRequest().authenticated()
+                .and()
             .authorizeRequests().anyRequest().authenticated()
             .and()
             .addFilter(new CustomAuthenticationFilter(super.authenticationManagerBean()))
