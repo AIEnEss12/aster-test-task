@@ -31,7 +31,7 @@ GET /tasks - Получение всех задач
 GET /tasks/{id} - Получение задачи по ID
 POST /tasks - Создание новой задачи (тело запроса содержит JSON с полями userId, name и description)
 PUT /tasks/{id} - Обновление задачи по ID (тело запроса содержит JSON с полями userId, name и description)
-DELETE /tasks/{id} - Удаление задачи по ID
+DELETE /tasks/{id} - Удаление задачи по ID, Добавил ограничение, возможность удаление только для роли admin
 
 
 Сущность User
